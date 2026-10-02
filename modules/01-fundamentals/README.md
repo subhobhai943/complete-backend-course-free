@@ -133,6 +133,21 @@ Authorization: Bearer jwt-token
 Cache-Control: no-cache
 ```
 
+### Here is what each line means:
+
+**Content-Type: application/json**
+- **Meaning:** Tells the receiver that the body of the message contains data formatted as JSON (JavaScript Object Notation).
+- **Use case:** Common in APIs when sending structured data like `{"username": "alex", "age": 30}`.
+
+**Authorization: Bearer `<token>`**
+- **Meaning:** Authenticates the client making the request.
+- **Bearer:** The authentication scheme indicating that whoever holds ("bears") this token is granted access.
+- **jwt-token:** A placeholder for a JSON Web Token (JWT)—a securely signed string encoding user identity and permissions.
+- **Security Note:** Bearer tokens must strictly be transmitted over HTTPS and should never be exposed in query parameters, URLs, or server logs.
+
+**Cache-Control: no-cache**
+- **Meaning:** Directs caching mechanisms (browsers, proxies, Content Delivery Networks) to revalidate the request with the server before serving a cached response.
+- **Use case:** Ensures the client receives fresh data rather than a stale cached copy.
 ---
 
 ## 4. RESTful API Design
